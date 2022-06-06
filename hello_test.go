@@ -3,12 +3,20 @@ package main
 import "testing"
 
 func TestHello(t *testing.T) {
+
+	assertCorrectMessage := func(t testing.TB, got, want string) {
+		t.Helper()
+		if got != want {
+			t.Errorf("got %q want %q", got, want)
+		}
+	}
+
 	t.Run("saying hello to people", func(t *testing.T) {
 		got := Hello("People")
 		want := "Hello, People"
 
 		if got != want {
-			t.Errorf("got %q want %q", got, want)
+			assertCorrectMessage(t, got, want)
 		}
 	})
 
@@ -17,7 +25,7 @@ func TestHello(t *testing.T) {
 		want := "Hello, World"
 
 		if got != want {
-			t.Errorf("got %q want %q", got, want)
+			assertCorrectMessage(t, got, want)
 		}
 	})
 
