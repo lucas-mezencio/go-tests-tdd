@@ -1,6 +1,9 @@
 package slices
 
-import "testing"
+import (
+	"reflect"
+	"testing"
+)
 
 //go test -cover
 func TestSum(t *testing.T) {
@@ -28,11 +31,12 @@ func TestSum(t *testing.T) {
 	})
 }
 
+// uso do reflect
 func TestSumAll(t *testing.T) {
 	got := SumAll([]int{1, 2}, []int{0, 9})
 	want := []int{3, 9}
 
-	if want != got {
-		t.Errorf("got %g, want %v", got, want)
+	if !reflect.DeepEqual(got, want) {
+		t.Errorf("got %v, want %v", got, want)
 	}
 }
