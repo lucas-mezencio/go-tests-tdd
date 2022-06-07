@@ -16,3 +16,10 @@ func TestRepeat(t *testing.T) {
 	})
 
 }
+
+// é literalmente um benchmark
+func BenchmarkRepeat(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		Repeat("a", 5)
+	}
+}
