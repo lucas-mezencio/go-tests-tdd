@@ -1,6 +1,6 @@
 package main
 
-import "fmt"
+import "go-test-tdd/slices"
 
 const englishHelloPrefix = "Hello, "
 const spanishHelloPrefix = "Hola, "
@@ -10,7 +10,7 @@ const spanish = "Spanish"
 const french = "French"
 
 func main() {
-	fmt.Println(Hello("Lucas", "Spanish"))
+	slices.SumAll([]int{1, 2}, []int{3, 4})
 }
 
 func Hello(name, language string) string {
