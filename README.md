@@ -14,3 +14,7 @@ printa a mensagem e falha o teste
 
 - subtests
 - asstertion moving to function
+
+###### Examples - embutidos na golang
+###### Benchmark
+
