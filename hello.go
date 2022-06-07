@@ -9,5 +9,8 @@ func main() {
 }
 
 func Hello(s string) string {
+	if s == "" {
+		s = "World"
+	}
 	return helloFunctionPrefix + s
 }
