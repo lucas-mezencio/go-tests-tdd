@@ -31,23 +31,11 @@ func TestSum(t *testing.T) {
 	})
 }
 
-// uso do reflect
 func TestSumAll(t *testing.T) {
-	t.Run("regular", func(t *testing.T) {
-		got := SumAll([]int{1, 2}, []int{0, 9})
-		want := []int{3, 9}
+	got := SumAll([]int{1, 2}, []int{0, 9})
+	want := []int{3, 9}
 
-		if !reflect.DeepEqual(got, want) {
-			t.Errorf("got %v, want %v", got, want)
-		}
-	})
-
-	t.Run("empty slice", func(t *testing.T) {
-		got := SumAll([]int{}, []int{3, 7})
-		want := []int{0, 10}
-
-		if !reflect.DeepEqual(got, want) {
-			t.Errorf("got %v, want %v", got, want)
-		}
-	})
+	if want != got {
+		t.Errorf("got %g, want %v", got, want)
+	}
 }
