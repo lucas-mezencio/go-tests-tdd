@@ -1,0 +1,34 @@
+package main
+
+import "testing"
+
+func TestSearch(t *testing.T) {
+	dictionary := Dictionary{"test": "map test value"}
+
+	t.Run("known word", func(t *testing.T) {
+		got, _ := dictionary.Search("test")
+		want := "map test value"
+
+		assertStrings(t, got, want)
+	})
+
+	t.Run("unknown word", func(t *testing.T) {
+		_, got := dictionary.Search("unknown")
+
+		assertError(t, got, ErrNotFound)
+	})
+}
+
+func assertError(t *testing.T, got, want error) {
+	t.Helper()
+	if got != want {
+		t.Errorf("got error %q want %q", got, want)
+	}
+}
+
+func assertStrings(t testing.TB, got, want string) {
+	t.Helper()
+	if got != want {
+		t.Errorf("got %q want %q", got, want)
+	}
+}
