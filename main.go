@@ -1,10 +1,7 @@
 package main
 
-import (
-	"log"
-	"net/http"
-)
+import "os"
 
 func main() {
-	log.Fatal(http.ListenAndServe(":5001", http.HandlerFunc(MyGreeterHandler)))
+	Countdown(os.Stdout)
 }
